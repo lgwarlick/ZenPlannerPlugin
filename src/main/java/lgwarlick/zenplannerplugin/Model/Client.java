@@ -21,13 +21,13 @@ public class Client {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @CsvBindByName
+    @CsvBindByName(column = "first name", required = true)
     private String firstName;
 
-    @CsvBindByName
+    @CsvBindByName(column = "last name", required = true)
     private String lastname;
 
-    @CsvBindByName
+    @CsvBindByName(column = "first attendance", required = true)
     private LocalDate firstAttendance;
 
     @CsvBindByName
