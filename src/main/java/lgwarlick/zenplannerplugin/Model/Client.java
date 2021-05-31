@@ -1,8 +1,11 @@
 package lgwarlick.zenplannerplugin.Model;
 import com.opencsv.bean.CsvBindByName;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.time.LocalDate;
 
+@Entity
 public class Client {
 
     public Client() {
@@ -14,6 +17,7 @@ public class Client {
         this.lastname = lastname;
     }
 
+    @Id
     private long id;
 
     @CsvBindByName
@@ -27,6 +31,7 @@ public class Client {
 
     @CsvBindByName
     private LocalDate mostRecentAttendance;
+
 
     /*Getters, Setters, toString**/
 
