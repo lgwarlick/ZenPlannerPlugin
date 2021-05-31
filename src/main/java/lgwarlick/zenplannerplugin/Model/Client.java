@@ -1,19 +1,17 @@
 package lgwarlick.zenplannerplugin.Model;
 import com.opencsv.bean.CsvBindByName;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
+@Table(name = "clients")
 public class Client {
 
     public Client() {
     }
 
-    public Client(long id, String firstName, String lastname) {
+    public Client(Long id, String firstName, String lastname) {
         this.id = id;
         this.firstName = firstName;
         this.lastname = lastname;
@@ -21,7 +19,7 @@ public class Client {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @CsvBindByName
     private String firstName;
@@ -38,11 +36,11 @@ public class Client {
 
     /*Getters, Setters, toString**/
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
