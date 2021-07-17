@@ -11,15 +11,15 @@ public class Client {
     public Client() {
     }
 
-    public Client(Long id, String firstName, String lastname) {
-        this.id = id;
+    public Client(String email, String firstName, String lastname) {
+        this.email = email;
         this.firstName = firstName;
         this.lastname = lastname;
     }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private String email;
 
     @CsvBindByName(column = "first name", required = true)
     private String firstName;
@@ -36,12 +36,12 @@ public class Client {
 
     /*Getters, Setters, toString**/
 
-    public Long getId() {
-        return id;
+    public String getEmail() {
+        return email;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setEmail(String id) {
+        this.email = id;
     }
 
     public String getFirstName() {
@@ -79,7 +79,7 @@ public class Client {
     @Override
     public String toString() {
         return "Client{" +
-                "id=" + id +
+                "id=" + email +
                 ", firstName='" + firstName + '\'' +
                 ", lastname='" + lastname + '\'' +
                 ", firstAttendance=" + firstAttendance +
